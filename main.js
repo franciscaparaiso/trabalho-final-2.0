@@ -23,16 +23,31 @@ let currentSlide = 0;
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 const totalSlides = portfolioItems.length;
 
+console.log('Portfolio items found:', totalSlides); // Debug
+
 function showSlide(n) {
     if (portfolioItems.length === 0) return;
     
+    console.log('Showing slide:', n); // Debug
+    
+    // Remove active from all items
     portfolioItems.forEach(item => item.classList.remove('active'));
     
-    if (n >= totalSlides) currentSlide = 0;
-    if (n < 0) currentSlide = totalSlides - 1;
+    // Handle wrap around
+    if (n >= totalSlides) {
+        currentSlide = 0;
+    } else if (n < 0) {
+        currentSlide = totalSlides - 1;
+    } else {
+        currentSlide = n;
+    }
     
+    // Show current slide
     portfolioItems[currentSlide].classList.add('active');
     
+    console.log('Active slide:', currentSlide); // Debug
+    
+    // Update counter
     const currentSlideElement = document.getElementById('currentSlide');
     const totalSlidesElement = document.getElementById('totalSlides');
     
@@ -41,6 +56,7 @@ function showSlide(n) {
 }
 
 function portfolioNav(direction) {
+    console.log('Navigate:', direction); // Debug
     currentSlide += direction;
     showSlide(currentSlide);
 }
@@ -49,31 +65,48 @@ function portfolioNav(direction) {
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
+console.log('Prev button:', prevBtn); // Debug
+console.log('Next button:', nextBtn); // Debug
+
 if (prevBtn) {
-    prevBtn.addEventListener('click', () => portfolioNav(-1));
+    prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('Prev clicked'); // Debug
+        portfolioNav(-1);
+    });
 }
 
 if (nextBtn) {
-    nextBtn.addEventListener('click', () => portfolioNav(1));
+    nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('Next clicked'); // Debug
+        portfolioNav(1);
+    });
 }
 
 // Keyboard Navigation for Portfolio
 document.addEventListener('keydown', (e) => {
     // Check if we're on portfolio page
-    const portfolioPage = document.querySelector('.portfolio-gallery');
-    if (portfolioPage && portfolioItems.length > 0) {
+    if (portfolioItems.length > 0) {
         if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            console.log('Arrow Left pressed'); // Debug
             portfolioNav(-1);
         } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            console.log('Arrow Right pressed'); // Debug
             portfolioNav(1);
         }
     }
 });
 
 // Initialize portfolio counter if exists
-if (document.getElementById('totalSlides') && totalSlides > 0) {
-    document.getElementById('totalSlides').textContent = totalSlides;
-    document.getElementById('currentSlide').textContent = 1;
+if (totalSlides > 0) {
+    const currentSlideElement = document.getElementById('currentSlide');
+    const totalSlidesElement = document.getElementById('totalSlides');
+    
+    if (currentSlideElement) currentSlideElement.textContent = 1;
+    if (totalSlidesElement) totalSlidesElement.textContent = totalSlides;
 }
 
 // Skills Animation - Animate on page load
