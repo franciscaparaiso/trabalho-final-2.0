@@ -45,10 +45,22 @@ function portfolioNav(direction) {
     showSlide(currentSlide);
 }
 
+// Portfolio button controls
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+if (prevBtn) {
+    prevBtn.addEventListener('click', () => portfolioNav(-1));
+}
+
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => portfolioNav(1));
+}
+
 // Keyboard Navigation for Portfolio
 document.addEventListener('keydown', (e) => {
     // Check if we're on portfolio page
-    const portfolioPage = document.querySelector('#portfolio, .portfolio-gallery');
+    const portfolioPage = document.querySelector('.portfolio-gallery');
     if (portfolioPage && portfolioItems.length > 0) {
         if (e.key === 'ArrowLeft') {
             portfolioNav(-1);
@@ -97,23 +109,39 @@ if (contactForm) {
     });
 }
 
-// Theme Toggle
+// Theme Toggle - Fixed version
+const themeToggle = document.getElementById('themeToggle');
 let isDark = false;
-function toggleTheme() {
-    isDark = !isDark;
-    const root = document.documentElement;
-    const toggle = document.querySelector('.theme-toggle');
-    
-    if (isDark) {
-        root.style.setProperty('--creme', '#2a2a2a');
-        root.style.setProperty('--texto', '#e0e0e0');
-        if (toggle) toggle.textContent = '☀️';
-    } else {
-        root.style.setProperty('--creme', '#fff8f0');
-        root.style.setProperty('--texto', '#5a4a42');
-        if (toggle) toggle.textContent = '🌙';
-    }
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        isDark = !isDark;
+        const root = document.documentElement;
+        
+        if (isDark) {
+            root.style.setProperty('--creme', '#2a2a2a');
+            root.style.setProperty('--texto', '#e0e0e0');
+            themeToggle.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            root.style.setProperty('--creme', '#fff8f0');
+            root.style.setProperty('--texto', '#5a4a42');
+            themeToggle.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
+        }
+    });
 }
+
+// Load saved theme
+window.addEventListener('load', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' && themeToggle) {
+        isDark = true;
+        document.documentElement.style.setProperty('--creme', '#2a2a2a');
+        document.documentElement.style.setProperty('--texto', '#e0e0e0');
+        themeToggle.textContent = '☀️';
+    }
+});
 
 // Feature Cards Interaction
 const featureCards = document.querySelectorAll('.feature-card');
@@ -126,7 +154,7 @@ featureCards.forEach(card => {
     });
 });
 
-// Smooth scroll to top when changing pages
+// Smooth scroll to top when loading page
 window.addEventListener('load', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
