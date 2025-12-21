@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Portfolio Vintage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">✿ Portfolio Vintage</div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="competencias.html" class="nav-link">Competências</a></li>
+                <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+            </ul>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page active">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--verde-escuro);">Vamos Conversar! 💬</h2>
+            
+            <div class="contact-wrapper">
+                <!-- Social Media Cards -->
+                <div class="social-cards">
+                    <div class="social-card instagram">
+                        <div class="social-icon">📷</div>
+                        <h3>Instagram</h3>
+                        <p>@kikasparaiso</p>
+                        <a href="https://instagram.com/kikasparaiso" target="_blank" class="social-btn">Seguir →</a>
+                    </div>
+                    
+                    <div class="social-card tiktok">
+                        <div class="social-icon">🎵</div>
+                        <h3>TikTok</h3>
+                        <p>@kikasparaiso</p>
+                        <a href="https://tiktok.com/@kikasparaiso" target="_blank" class="social-btn">Seguir →</a>
+                    </div>
+                    
+                    <div class="social-card email">
+                        <div class="social-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p>paraisof232@gmail.com</p>
+                        <a href="mailto:paraisof232@gmail.com" class="social-btn">Enviar Email →</a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-container">
+                    <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--verde-escuro);">Ou envie uma mensagem direta</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="assunto">Assunto</label>
+                            <input type="text" id="assunto" name="assunto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Mensagem ✉️</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Portfolio Vintage. Desenvolvido com 💖 e ☕</p>
+    </footer>
+
+    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

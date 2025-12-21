@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Portfolio Vintage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">✿ Portfolio Vintage</div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                <li><a href="competencias.html" class="nav-link">Competências</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page active">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--verde-escuro);">Portfolio de Projetos</h2>
+            <div class="keyboard-hint">
+                💡 Use as setas ← → do teclado ou os botões para navegar
+            </div>
+            <div class="portfolio-gallery">
+                <div class="portfolio-item active">
+                    <div class="portfolio-image">🌸</div>
+                    <h3>Website E-commerce Vintage</h3>
+                    <p>Plataforma de comércio eletrónico com design retrô, sistema de carrinho de compras e integração de pagamentos. Desenvolvido com foco em experiência do utilizador e conversão.</p>
+                    <p><strong>Tecnologias:</strong> HTML5, CSS3, JavaScript, API REST</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎵</div>
+                    <h3>Player de Música Interativo</h3>
+                    <p>Interface de reprodução de música com controles personalizados, visualizações de áudio e playlists dinâmicas. Design inspirado em gravadores vintage.</p>
+                    <p><strong>Tecnologias:</strong> Web Audio API, Canvas, CSS Animations</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📱</div>
+                    <h3>App de Gestão de Tarefas</h3>
+                    <p>Aplicação web para organização pessoal com sistema de categorias, prioridades e notificações. Interface intuitiva com design minimalista vintage.</p>
+                    <p><strong>Tecnologias:</strong> LocalStorage API, Drag & Drop, Notifications</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎨</div>
+                    <h3>Galeria de Arte Digital</h3>
+                    <p>Portfólio fotográfico com navegação fluida, filtros por categoria e visualização em lightbox. Optimizado para carregar imagens de alta qualidade.</p>
+                    <p><strong>Tecnologias:</strong> Lazy Loading, CSS Grid, Intersection Observer</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🍵</div>
+                    <h3>Blog de Receitas</h3>
+                    <p>Plataforma de partilha de receitas com sistema de pesquisa, filtros nutricionais e calculadora de porções. Design acolhedor e funcional.</p>
+                    <p><strong>Tecnologias:</strong> JSON, Fetch API, Responsive Images</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎮</div>
+                    <h3>Jogo Educativo Interativo</h3>
+                    <p>Mini-jogo educacional com pontuação, níveis de dificuldade e feedback visual. Desenvolvido para tornar a aprendizagem divertida.</p>
+                    <p><strong>Tecnologias:</strong> Canvas API, Game Loop, Animation Frames</p>
+                </div>
+            </div>
+            <div class="portfolio-controls">
+                <button class="control-btn" onclick="portfolioNav(-1)">← Anterior</button>
+                <button class="control-btn" onclick="portfolioNav(1)">Próximo →</button>
+            </div>
+            <div class="portfolio-counter">
+                <span id="currentSlide">1</span> / <span id="totalSlides">6</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Portfolio Vintage. Desenvolvido com 💖 e ☕</p>
+    </footer>
+
+    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Criativo - Design Vintage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">✿ Portfolio Vintage</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#competencias" class="nav-link">Competências</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME PAGE -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <h1>🌸 Bem-vindo ao Meu Portfolio 🌿</h1>
+                <p>Design criativo com um toque vintage. Explore projetos únicos que combinam estética retrô com funcionalidade moderna.</p>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🎨 Design Único</h3>
+                    <p>Cada projeto é criado com atenção aos detalhes, combinando cores suaves e estética vintage que trazem nostalgia e modernidade.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💻 Responsivo</h3>
+                    <p>Todos os projetos são otimizados para funcionar perfeitamente em telemóveis, tablets e computadores, garantindo a melhor experiência.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Interativo</h3>
+                    <p>Navegação intuitiva com controlo por teclado, animações suaves e funcionalidades JavaScript que tornam a experiência única.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="sobre" class="page">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre Nós</h2>
+                    <p>Somos uma equipa apaixonada por design e desenvolvimento web, especializada em criar experiências digitais que combinam estética vintage com tecnologia moderna.</p>
+                    <p>O nosso trabalho reflete a paixão por detalhes cuidadosos, cores harmoniosas e interfaces que contam histórias. Cada projeto é uma oportunidade de criar algo memorável.</p>
+                    <p>Com experiência em HTML, CSS e JavaScript, focamos em entregar sites responsivos, acessíveis e otimizados para todos os dispositivos.</p>
+                    <p><strong>Filosofia:</strong> Acreditamos que o design deve ser tanto funcional quanto bonito, criando conexões emocionais com os utilizadores.</p>
+                </div>
+                <div class="about-image">
+                    🎨
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO PAGE -->
+        <section id="portfolio" class="page">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--verde-escuro);">Portfolio de Projetos</h2>
+            <div class="keyboard-hint">
+                💡 Use as setas ← → do teclado ou os botões para navegar
+            </div>
+            <div class="portfolio-gallery">
+                <div class="portfolio-item active">
+                    <div class="portfolio-image">🌸</div>
+                    <h3>Website E-commerce Vintage</h3>
+                    <p>Plataforma de comércio eletrónico com design retrô, sistema de carrinho de compras e integração de pagamentos. Desenvolvido com foco em experiência do utilizador e conversão.</p>
+                    <p><strong>Tecnologias:</strong> HTML5, CSS3, JavaScript, API REST</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎵</div>
+                    <h3>Player de Música Interativo</h3>
+                    <p>Interface de reprodução de música com controles personalizados, visualizações de áudio e playlists dinâmicas. Design inspirado em gravadores vintage.</p>
+                    <p><strong>Tecnologias:</strong> Web Audio API, Canvas, CSS Animations</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📱</div>
+                    <h3>App de Gestão de Tarefas</h3>
+                    <p>Aplicação web para organização pessoal com sistema de categorias, prioridades e notificações. Interface intuitiva com design minimalista vintage.</p>
+                    <p><strong>Tecnologias:</strong> LocalStorage API, Drag & Drop, Notifications</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎨</div>
+                    <h3>Galeria de Arte Digital</h3>
+                    <p>Portfólio fotográfico com navegação fluida, filtros por categoria e visualização em lightbox. Optimizado para carregar imagens de alta qualidade.</p>
+                    <p><strong>Tecnologias:</strong> Lazy Loading, CSS Grid, Intersection Observer</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🍵</div>
+                    <h3>Blog de Receitas</h3>
+                    <p>Plataforma de partilha de receitas com sistema de pesquisa, filtros nutricionais e calculadora de porções. Design acolhedor e funcional.</p>
+                    <p><strong>Tecnologias:</strong> JSON, Fetch API, Responsive Images</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎮</div>
+                    <h3>Jogo Educativo Interativo</h3>
+                    <p>Mini-jogo educacional com pontuação, níveis de dificuldade e feedback visual. Desenvolvido para tornar a aprendizagem divertida.</p>
+                    <p><strong>Tecnologias:</strong> Canvas API, Game Loop, Animation Frames</p>
+                </div>
+            </div>
+            <div class="portfolio-controls">
+                <button class="control-btn" onclick="portfolioNav(-1)">← Anterior</button>
+                <button class="control-btn" onclick="portfolioNav(1)">Próximo →</button>
+            </div>
+            <div class="portfolio-counter">
+                <span id="currentSlide">1</span> / <span id="totalSlides">6</span>
+            </div>
+        </section>
+
+        <!-- SKILLS PAGE -->
+        <section id="competencias" class="page">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--verde-escuro);">Competências Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-name">HTML5</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-level="95">95%</div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">CSS3 & Flexbox/Grid</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-level="90">90%</div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-level="85">85%</div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Responsive Design</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-level="92">92%</div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">UI/UX Design</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-level="88">88%</div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Performance Optimization</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-level="80">80%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section id="contacto" class="page">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--verde-escuro);">Vamos Conversar! 💬</h2>
+            
+            <div class="contact-wrapper">
+                <!-- Social Media Cards -->
+                <div class="social-cards">
+                    <div class="social-card instagram">
+                        <div class="social-icon">📷</div>
+                        <h3>Instagram</h3>
+                        <p>@kikasparaiso</p>
+                        <a href="https://instagram.com/kikasparaiso" target="_blank" class="social-btn">Seguir →</a>
+                    </div>
+                    
+                    <div class="social-card tiktok">
+                        <div class="social-icon">🎵</div>
+                        <h3>TikTok</h3>
+                        <p>@kikasparaiso</p>
+                        <a href="https://tiktok.com/@kikasparaiso" target="_blank" class="social-btn">Seguir →</a>
+                    </div>
+                    
+                    <div class="social-card email">
+                        <div class="social-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p>paraisof232@gmail.com</p>
+                        <a href="mailto:paraisof232@gmail.com" class="social-btn">Enviar Email →</a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-container">
+                    <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--verde-escuro);">Ou envie uma mensagem direta</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="assunto">Assunto</label>
+                            <input type="text" id="assunto" name="assunto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Mensagem ✉️</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Portfolio Vintage. Desenvolvido com 💖 e ☕</p>
+    </footer>
+
+    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
