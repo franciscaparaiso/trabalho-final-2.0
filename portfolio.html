@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Portfolio Vintage</title>
+    <title>Portfolio - Portfolio da Kika</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">✿ Portfolio Vintage</div>
+            <div class="logo">Portfolio da Kika</div>
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="sobre.html" class="nav-link">Sobre</a></li>
@@ -30,50 +29,72 @@
         <section class="page active">
             <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--verde-escuro);">Portfolio de Projetos</h2>
             <div class="keyboard-hint">
-                💡 Use as setas ← → do teclado ou os botões para navegar
+                 Use as setas ← → do teclado ou os botões para navegar
             </div>
             <div class="portfolio-gallery">
+                <!-- Projeto 1 -->
                 <div class="portfolio-item active">
-                    <div class="portfolio-image"></div>
-                    <h3>Website E-commerce Vintage</h3>
-                    <p>Plataforma de comércio eletrónico com design retrô, sistema de carrinho de compras e integração de pagamentos. Desenvolvido com foco em experiência do utilizador e conversão.</p>
-                    <p><strong>Tecnologias:</strong> HTML5, CSS3, JavaScript, API REST</p>
+                    <div class="portfolio-image">
+                        <img src="images/project1.jpg" alt="Fotografia de paisagem">
+                    </div>
+                    <h3>Fotografia de paisagem</h3>
+                    <p>Esta fotografia foi tirada em Bragança na Serra de Nogueira</p>
                 </div>
+                
+                <!-- Projeto 2 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-image">🎵</div>
-                    <h3>Player de Música Interativo</h3>
-                    <p>Interface de reprodução de música com controles personalizados, visualizações de áudio e playlists dinâmicas. Design inspirado em gravadores vintage.</p>
-                    <p><strong>Tecnologias:</strong> Web Audio API, Canvas, CSS Animations</p>
+                    <div class="portfolio-image">
+                        <img src="images/photo (22).jpg" alt="Fotografia abstrata">
+                    </div>
+                    <h3>Fotografia abstrata</h3>
+                    <p>Esta fotografia representa os corpos de luz e sombra em movimento.</p>
                 </div>
+                
+                <!-- Projeto 3 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-image">📱</div>
-                    <h3>App de Gestão de Tarefas</h3>
-                    <p>Aplicação web para organização pessoal com sistema de categorias, prioridades e notificações. Interface intuitiva com design minimalista vintage.</p>
-                    <p><strong>Tecnologias:</strong> LocalStorage API, Drag & Drop, Notifications</p>
+                    <div class="portfolio-image">
+                        <img src="images/project1.jpg" alt="Fotografia de retrato">
+                    </div>
+                    <h3>Fotografia de retrato</h3>
+                    <p>Esta fotografia foi inpirada na Cindy Sherman</p>
                 </div>
+                
+                <!-- Projeto 4 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-image">🎨</div>
+                    <div class="portfolio-image">
+                        <img src="images/photo (22).jpg" alt="Galeria de Arte Digital">
+                    </div>
                     <h3>Galeria de Arte Digital</h3>
-                    <p>Portfólio fotográfico com navegação fluida, filtros por categoria e visualização em lightbox. Optimizado para carregar imagens de alta qualidade.</p>
+                    <p>Portfólio fotográfico com navegação fluida, filtros por categoria e visualização em lightbox.</p>
                     <p><strong>Tecnologias:</strong> Lazy Loading, CSS Grid, Intersection Observer</p>
                 </div>
+
+                <!-- Projeto 5 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-image">🍵</div>
+                    <div class="portfolio-image">
+                        <img src="images/project1.jpg" alt="Blog de Receitas">
+                    </div>
                     <h3>Blog de Receitas</h3>
-                    <p>Plataforma de partilha de receitas com sistema de pesquisa, filtros nutricionais e calculadora de porções. Design acolhedor e funcional.</p>
+                    <p>Plataforma de partilha de receitas com sistema de pesquisa, filtros nutricionais e calculadora de porções.</p>
                     <p><strong>Tecnologias:</strong> JSON, Fetch API, Responsive Images</p>
                 </div>
+
+                <!-- Projeto 6 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-image">🎮</div>
+                    <div class="portfolio-image">
+                        <img src="images/photo (22).jpg" alt="Jogo Educativo Interativo">
+                    </div>
                     <h3>Jogo Educativo Interativo</h3>
-                    <p>Mini-jogo educacional com pontuação, níveis de dificuldade e feedback visual. Desenvolvido para tornar a aprendizagem divertida.</p>
+                    <p>Mini-jogo educacional com pontuação, níveis de dificuldade e feedback visual.</p>
                     <p><strong>Tecnologias:</strong> Canvas API, Game Loop, Animation Frames</p>
                 </div>
             </div>
+            
             <div class="portfolio-controls">
-                <button class="control-btn" onclick="portfolioNav(-1)">← Anterior</button>
-                <button class="control-btn" onclick="portfolioNav(1)">Próximo →</button>
+                <button class="control-btn" id="prevBtn">← Anterior</button>
+                <button class="control-btn" id="nextBtn">Próximo →</button>
             </div>
+            
             <div class="portfolio-counter">
                 <span id="currentSlide">1</span> / <span id="totalSlides">6</span>
             </div>
@@ -81,11 +102,82 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Portfolio Vintage. Desenvolvido com 💖 e ☕</p>
+        <p>&copy; 2024 Portfolio </p>
     </footer>
 
-    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+    
 
-    <script src="script.js"></script>
+    <script>
+        // PORTFOLIO - Navegação super simples
+        let currentSlide = 0;
+        const items = document.querySelectorAll('.portfolio-item');
+        
+        function showSlide(index) {
+            // Normalizar índice
+            if (index >= items.length) currentSlide = 0;
+            else if (index < 0) currentSlide = items.length - 1;
+            else currentSlide = index;
+            
+            // Esconder todos
+            items.forEach(item => {
+                item.style.display = 'none';
+            });
+            
+            // Mostrar atual
+            items[currentSlide].style.display = 'block';
+            
+            // Atualizar contador
+            document.getElementById('currentSlide').textContent = currentSlide + 1;
+            document.getElementById('totalSlides').textContent = items.length;
+        }
+        
+        // Botões
+        document.getElementById('nextBtn').onclick = function() {
+            showSlide(currentSlide + 1);
+        };
+        
+        document.getElementById('prevBtn').onclick = function() {
+            showSlide(currentSlide - 1);
+        };
+        
+        // Teclado
+        document.onkeydown = function(e) {
+            if (e.key === 'ArrowRight') showSlide(currentSlide + 1);
+            if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
+        };
+        
+        // Menu mobile
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        
+        if (burger) {
+            burger.onclick = function() {
+                nav.classList.toggle('active');
+                burger.classList.toggle('active');
+            };
+        }
+        
+        // Theme toggle
+        const themeBtn = document.getElementById('themeToggle');
+        let dark = false;
+        
+        if (themeBtn) {
+            themeBtn.onclick = function() {
+                dark = !dark;
+                if (dark) {
+                    document.documentElement.style.setProperty('--creme', '#2a2a2a');
+                    document.documentElement.style.setProperty('--texto', '#e0e0e0');
+                    themeBtn.textContent = '☀️';
+                } else {
+                    document.documentElement.style.setProperty('--creme', '#fff8f0');
+                    document.documentElement.style.setProperty('--texto', '#5a4a42');
+                    themeBtn.textContent = '🌙';
+                }
+            };
+        }
+        
+        // Inicializar
+        showSlide(0);
+    </script>
 </body>
 </html>
