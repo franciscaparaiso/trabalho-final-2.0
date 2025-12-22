@@ -71,7 +71,7 @@
 
             
 
-                <!-- Projeto 6 -->
+               
                 <div class="portfolio-item">
                     <div class="portfolio-image">
                         <img src="images/photo (21).jpg" alt="natureza">
@@ -81,7 +81,7 @@
                     
                 </div>
 
-                <!-- Projeto 7 - Site de Filmes -->
+                
                 <div class="portfolio-item">
                     <div class="portfolio-image">
                         <iframe src="https://franciscaparaiso.github.io/sitefilme/" width="100%" height="100%" frameborder="0" allowfullscreen style="border-radius: 12px;"></iframe>
@@ -91,7 +91,7 @@
                 
                 </div>
 
-                <!-- Projeto 8 - Galeria Fotográfica -->
+               
                 <div class="portfolio-item">
                     <div class="portfolio-image">
                         <iframe src="https://franciscaparaiso.github.io/galeria/" width="100%" height="100%" frameborder="0" allowfullscreen style="border-radius: 12px;"></iframe>
@@ -101,7 +101,7 @@
                     
                 </div>
 
-                <!-- Projeto 9 - Site Pessoal -->
+                
                 <div class="portfolio-item">
                     <div class="portfolio-image">
                         <iframe src="https://franciscaparaiso.github.io/paraiso/" width="100%" height="100%" frameborder="0" allowfullscreen style="border-radius: 12px;"></iframe>
@@ -130,30 +130,30 @@
     
 
     <script>
-        // PORTFOLIO - Navegação super simples
+        
         let currentSlide = 0;
         const items = document.querySelectorAll('.portfolio-item');
         
         function showSlide(index) {
-            // Normalizar índice
+            
             if (index >= items.length) currentSlide = 0;
             else if (index < 0) currentSlide = items.length - 1;
             else currentSlide = index;
             
-            // Esconder todos
+            
             items.forEach(item => {
                 item.style.display = 'none';
             });
             
-            // Mostrar atual
+           
             items[currentSlide].style.display = 'block';
             
-            // Atualizar contador
+            
             document.getElementById('currentSlide').textContent = currentSlide + 1;
             document.getElementById('totalSlides').textContent = items.length;
         }
         
-        // Botões
+        
         document.getElementById('nextBtn').onclick = function() {
             showSlide(currentSlide + 1);
         };
@@ -162,13 +162,13 @@
             showSlide(currentSlide - 1);
         };
         
-        // Teclado
+        
         document.onkeydown = function(e) {
             if (e.key === 'ArrowRight') showSlide(currentSlide + 1);
             if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
         };
         
-        // Menu mobile
+        
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links');
         

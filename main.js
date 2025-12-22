@@ -1,6 +1,4 @@
-// ==========================================
-// MENU MOBILE
-// ==========================================
+
 const burger = document.querySelector('.burger');
 const navLinksContainer = document.querySelector('.nav-links');
 
@@ -11,7 +9,7 @@ if (burger && navLinksContainer) {
     });
 }
 
-// Fechar menu ao clicar em link
+
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -22,9 +20,9 @@ navLinks.forEach(link => {
     });
 });
 
-// ==========================================
-// PORTFOLIO - NAVEGAÇÃO SIMPLES
-// ==========================================
+
+
+
 let currentSlide = 0;
 
 function updatePortfolio() {
@@ -32,17 +30,17 @@ function updatePortfolio() {
     
     if (items.length === 0) return;
     
-    // Esconder todos
+    
     items.forEach(item => {
         item.style.display = 'none';
         item.classList.remove('active');
     });
     
-    // Mostrar atual
+    
     items[currentSlide].style.display = 'block';
     items[currentSlide].classList.add('active');
     
-    // Atualizar contador
+   
     const current = document.getElementById('currentSlide');
     const total = document.getElementById('totalSlides');
     if (current) current.textContent = currentSlide + 1;
@@ -63,7 +61,7 @@ function prevSlide() {
     updatePortfolio();
 }
 
-// Botões
+
 const nextBtn = document.getElementById('nextBtn');
 const prevBtn = document.getElementById('prevBtn');
 
@@ -79,7 +77,7 @@ if (prevBtn) {
     };
 }
 
-// Teclado
+
 document.onkeydown = function(e) {
     const items = document.querySelectorAll('.portfolio-item');
     if (items.length === 0) return;
@@ -91,15 +89,15 @@ document.onkeydown = function(e) {
     }
 };
 
-// Inicializar quando carregar
+
 window.onload = function() {
     updatePortfolio();
     animateSkills();
 };
 
-// ==========================================
-// SKILLS ANIMATION
-// ==========================================
+
+
+
 function animateSkills() {
     const skillLevels = document.querySelectorAll('.skill-level');
     skillLevels.forEach(skill => {
@@ -111,9 +109,8 @@ function animateSkills() {
     });
 }
 
-// ==========================================
-// CONTACT FORM
-// ==========================================
+
+
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.onsubmit = function(e) {
@@ -128,9 +125,9 @@ if (contactForm) {
     };
 }
 
-// ==========================================
-// THEME TOGGLE
-// ==========================================
+
+
+
 const themeToggle = document.getElementById('themeToggle');
 let isDark = false;
 
@@ -150,9 +147,7 @@ if (themeToggle) {
     };
 }
 
-// ==========================================
-// FEATURE CARDS
-// ==========================================
+
 const featureCards = document.querySelectorAll('.feature-card');
 featureCards.forEach(card => {
     card.onclick = function() {
